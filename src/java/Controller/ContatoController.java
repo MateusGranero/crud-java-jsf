@@ -7,7 +7,10 @@ package Controller;
 
 import DAO.ContatoDAO;
 import bean.ContatoBean;
+import java.io.Serializable;
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
@@ -16,7 +19,9 @@ import javax.faces.model.ListDataModel;
  *
  * @author mateus
  */
-public class ContatoController {
+@ManagedBean
+@SessionScoped
+public class ContatoController  implements Serializable{
     private ContatoBean contatoB;
     private DataModel listaContatos;
     

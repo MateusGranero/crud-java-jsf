@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:decorate template="index.xhtml">
+        <ui:define name="centro">
+            <p:fieldset legend="Novo Contato" toggleable="true">
+                <center>
+                    <h:form>
+                        <h:panelGrid columns="3" id="grid">
+                            <p:outputLabel value="Nome"/>
+                            <p:inputText id="nome" value="#{contatoController.contatoB.nome}" required="true" requiredMessage="O campo nome deve ser preenchido!"/>
+                            <p:message for="nome"/>
+                        </h:panelGrid>
+                        
+                        <p:separator style="width: 80%; height: 5px"/>
+                        
+                        <p:commandButton value="Salvar" update="grid" action="#{contatoController.salvaContato()}"/>
+                        <p:commandButton value="Limapr" type="reset"/>
+                    </h:form>
+                </center>
+            </p:fieldset>
+        </ui:define>
+    </ui:decorate>
+</html>
+
